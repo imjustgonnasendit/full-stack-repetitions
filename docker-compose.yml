@@ -1,0 +1,10 @@
+services:
+  db:
+    image: postgres:16
+    container_name: yourapp_db
+    ports: ["5432:5432"]
+    env_file: .env.db
+    volumes:
+      - dbdata:/var/lib/postgresql/data
+volumes:
+  dbdata:
